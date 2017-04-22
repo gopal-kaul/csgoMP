@@ -1,0 +1,55 @@
+csgoMP (Music Player) lets you select an audio file and converts it to 
+a WAV that can be used with the csgo voice_inputfromfile command.  This 
+plays the WAV file over in game comms instead of taking input from your 
+microphone.
+
+It also writes the cfg files needed to set up keybingings to your csgo 
+directory.
+
+Idea taken from the Windows program SLAM: https://github.com/SilentSys/SLAM
+
+Requirements:
+- ffmpeg
+- python and gtk bindings
+
+Running it
+$ ./csgomp.py
+
+(or $ python csgomp.py)
+
+Check the preferences to make sure the paths for ffmpeg and your csgo 
+directory are correct.  Optionally set a maximum length for the converted 
+audio file.
+
+Add audio file(s) to the list.  The file types supported depends on how your 
+ffmpeg was built.
+
+Click "write csgo cfg" to save the required cfg file to your csgo directory
+
+In game, bring up the console and run: 
+] exec csgomp
+
+This will load the cfg and assign the ' and / keys to play your selected audio 
+file.  These are currently hardcoded.  The ' key will play the audio while you 
+are holding it, and the / key will toggle playback on and off.  If the end of
+the file is reached during continuous playback you will need to press / again
+to toggle it off - it won't automatically stop transmitting.
+
+In the csgomp main window select one of your audio files on the list, the 
+currently highlighted one will be active in game
+
+
+
+Todo:
+Add option to change keybindings
+find and check paths for things, get steam path somehow?
+delete files from list
+cleanup on exit
+cache converted WAV files to speed up switching songs
+Pause option, reconvert temp song from current position when paused in game
+Allow changing of volume on converted files
+Preview of converted file
+
+Bugs:
+lots of things not finished
+csgo crashes if you try to play the file while it is being converted

@@ -1,0 +1,32 @@
+2017-04-16 v0.0.7:
+- Added some hotkey support for changing selected song.  This requires
+  the python-xlib module.  The keys are hardcoded keypad 0 - 9 for now
+  and correspond to positions 0 - 9 in the track list.
+  (Warning: Don't change track while something is playing, it might crash csgo)
+
+2017-02-25 v0.0.6:
+- Added context menu, doesn't do anything yet
+- Added scrollbars to the audio tracks list
+- Try to restore window size on startup
+
+2016-12-18 v0.0.5:
+- Fixed bug where adding local files with no start and end
+  set would create 0 length wavs
+
+2016-12-10 v0.0.4:
+- Added alises
+- Added duration selection on local files
+- Fixed youtube downloading bugs
+
+2016-12-03 v0.0.3:	
+- Added -map_metadata -1 to ffmpeg command to stop images getting included 
+  from mp3 files
+- Added caching of converted files for quicker swapping, also required
+  for the grab from youtube option when it's added.
+- Added start of youtube downloading code and music file trimming options
+
+2016-11-26 v0.0.2: 	
+- Added bind (/) for toggling audio play on and off
+			
+2016-11-20 v0.0.1: 	
+- Initial release
